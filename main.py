@@ -38,6 +38,7 @@ def predict_charge(ins: InsuranceInput):
         # Apply the same scaler used during training
         input_scaled = scalar.transform(input_array)
 
+        # Predicting the results
         prediction = model.predict(input_scaled)
 
         return {"predicted_charges": float(prediction[0][0])}
